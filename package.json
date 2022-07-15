@@ -1,0 +1,30 @@
+{
+  "name": "hex3d",
+  "version": "1.0.0",
+  "description": "Hex3D is a Javascript Editor made for modding Games.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PacketDev/Hex3D.git"
+  },
+  "keywords": [
+    "HexEditor",
+    "Editor",
+    "3D",
+    "Server"
+  ],
+  "author": "Packet",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/PacketDev/Hex3D/issues"
+  },
+  "homepage": "https://github.com/PacketDev/Hex3D#readme",
+  "dependencies": {
+    "outline-logs": "^1.0.0",
+    "process": "^0.11.10",
+    "readline": "^1.3.0"
+  }
+}
