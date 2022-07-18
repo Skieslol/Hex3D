@@ -1,9 +1,12 @@
 const OutlineLogger = require("outline-logs");
+const Renderer = require("./Renderer");
 
 // Please Note there is no window rendering system so no window will pop up but I will add a rendering system in the future!
 
 class Loader {
     static async Load() {
+        Renderer.Render(); // Render everything
+
         const Enums = {
             FRAMEBUFFER: ["FRAMEBUFFER"],
             FRAMECOUNTER: ["FRAMECOUNTER"],

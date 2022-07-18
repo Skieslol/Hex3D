@@ -3,3 +3,5 @@ class Renderer {
         // TODO(PACKET): Do Render Code :D
     }
 }
+
+module.exports = Renderer;
