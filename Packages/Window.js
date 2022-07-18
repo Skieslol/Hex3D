@@ -92,7 +92,8 @@ class Loader {
                 "Engine News",
                 "Create New Project",
                 "Open Project",
-                "Github"
+                "Github",
+                "Discord?"
             ];
 
             if (Items) {
