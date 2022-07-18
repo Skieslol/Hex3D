@@ -108,12 +108,12 @@ class Loader {
             }
         });
 
-        const FortniteRefrence = Hex3D(() => {
-            const Popup = PopupAnimation();
+        // const FortniteRefrence = Hex3D(() => {
+        //     const Popup = PopupAnimation();
 
-            Popup = Message("You've found a secret refrence for clicking News 100 times!");
-            Popup = Image("https://media.discordapp.net/attachments/909474729583333427/998472843119558687/random-fortnite-account1.jpg");
-        });
+        //     Popup = Message("You've found a secret refrence for clicking News 100 times!");
+        //     Popup = Image("https://media.discordapp.net/attachments/909474729583333427/998472843119558687/random-fortnite-account1.jpg");
+        // });
 
         const RichPresence = Presence(() => {
             const Discord = Message("Playing Hex3D");
@@ -144,7 +144,7 @@ class Loader {
 
         exportItem = GUI;
         exportItem = RichPresence;
-        exportItem = FortniteRefrence;
+        // exportItem = FortniteRefrence;
         exportItem = Side_Bar;
         exportItem = Vector3;
         exportItem = Title;
