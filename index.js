@@ -1,11 +1,9 @@
 const Editor = require("./Packages/HexEditor");
 const Hex = new Editor();
-<<<<<<< Updated upstream
 const Loader = require("./Packages/Window");
 
 Hex.get(); // literally just calling everything
 Loader.Load();
-=======
 const Window = require("./Packages/Window");
 const Renderer = require("./Packages/Renderer");
 const Fog = require("./Packages/Fog");
@@ -58,4 +56,3 @@ class Hex3D {
 }
 
 module.exports = Hex3D;
->>>>>>> Stashed changes
