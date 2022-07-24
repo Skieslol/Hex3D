@@ -14,8 +14,6 @@ class Hex3D {
         this.Hex = Hex;
         this.Window = Window
         this.Renderer = Renderer;
-        this.Fog = new Fog();
-        this.Lights = new Lights();
         this.AmbientLight = function (params = {}) {
             function getComputedLight() { }
 
