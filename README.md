@@ -11,15 +11,13 @@ FloorShadows <br />
 Scenes <br />
 Fog <br />
 
-#### Installation
-```cs
-// this is for the source code users
-npm install
-node ./test/main.js
-```
-```cs
-// this is for the package users
-npm install hex3d
+## Installation
+
+This is a [Node.js](https://nodejs.org/en/) package available using [npm registry]
+(https://www.npmjs.com/).
+
+```console
+$ npm install hex3d
 ```
 
 ### End
