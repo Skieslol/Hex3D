@@ -2,15 +2,20 @@ const Hex3D = require("../index");
 const Hex = new Hex3D();
 const Camera = require("../Packages/Camera");
 const Vector3 = require("../Packages/Vector3");
+const Lights = require("../Packages/Lights");
 
 const win = new Hex.Window();
 const camera = new Camera();
+const Fog = require("../Packages/Fog");
+const fs = require("fs");
+const Renderer = require("../Packages/Renderer");
+const path = require("path");
+
 
 // engine test
 
 function cameraPositionGame(event) {
-    event.data.position = camera.position;
-    event.preventCollision = true;
+    return event;
 };
 
 var aspectRatio, fieldOfView, nearPlane, farPlane, globalLight, shadowLight, light, scene, ambientLight;
@@ -23,7 +28,7 @@ function InitilizeWindow() {
     Y = height / 2;
 
     scene = win.Scene;
-    scene.fog = new Hex.Fog(0xd5eae5, 160, 350);
+    scene.fog = new Fog(0xd5eae5, 160, 350);
 
     aspectRatio = width / height;
     fieldOfView = 50;
@@ -46,30 +51,26 @@ function InitilizeWindow() {
 }
 
 function InitilizeLighting() {
-    light = new Hex.Lights({
+    const light = new Lights({
         color: "#000000",
         intensity: 0.8
     });
 
-    globalLight = new Hex.Lights({
+    globalLight = new Lights({
         offset: 0xffffffff,
         something: 0.9
     });
 
-    shadowLight = new Hex.Lights({
+    shadowLight = new Lights({
         offset: 0xffffffff,
         something: 1
     });
 
-    shadowLight.position.set(-30, 40, 20);
-    shadowLight.position.castLight = true;
-    shadowLight.camera.left = -400;
-    
     scene = win.Scene;
 
     // Set up the ambient light
     ambientLight = new Hex.AmbientLight({
-        color: "#000000",   
+        color: "#000000",
         intensity: 0.5,
         castShadow: true,
     });
@@ -87,13 +88,22 @@ function InitilizeFloor() {
     });
 }
 
+function RenderHTML() {
+    const main = fs.readFileSync("./test/main.html");
+
+    Renderer.Render(main);
+}
+
 function InitilizeProject(event) {
     Hex.Window.Load();
-    Hex.Hex.get();
+    Hex.Hex.get("Running Project!");
 
+    document.querySelector("h1id");
+
+    RenderHTML();
     InitilizeWindow();
     InitilizeLighting();
     InitilizeFloor();
-
-    WhileLoop();
 }
+
+InitilizeProject();
