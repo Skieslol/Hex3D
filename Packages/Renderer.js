@@ -11,7 +11,7 @@ class Renderer {
         return InitilizeProject(event);
     }
 
-    constructor( params = {}, window ) {
+    constructor(params = {}, window) {
         const context = null ? params.context : window.getComputedStyle();
 
         let beta;
@@ -20,7 +20,7 @@ class Renderer {
         let performanceMode;
         let graphics;
 
-        if ( context !== null ) {
+        if (context !== null) {
             beta = context.beta;
             antialiasing = context.antialiasing;
             depthTest = context.depthTest;
@@ -32,7 +32,23 @@ class Renderer {
             depthTest = params.depthTest !== undefined ? params.depthTest : false;
             performanceMode = params.performanceMode !== undefined ? params.performanceMode : false;
             graphics = params.graphics !== undefined ? params.graphics : "default";
-        }    
+        }
+    }
+
+    // initilize WebGL
+    Initilize() {
+        const canvas = document.querySelector("#glCanvas");
+        const gl = canvas.getContext("webgl2");
+        if (gl === null) {
+            alert("Unable to initialize WebGL. Your browser or machine may not support it.");
+            return;
+        }
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+    }
+
+    Render() {
+        window.onload = this.Initilize();
     }
 }
 
