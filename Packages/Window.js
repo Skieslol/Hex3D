@@ -1,5 +1,10 @@
 const OutlineLogger = require("outline-logs");
 
+const Application = require("../Editor/Application");
+const { Configuration } = require("../Editor/Application");
+
+const fs = require("fs");
+
 // Please Note there is no window rendering system so no window will pop up but I will add a rendering system in the future!
 
 class Loader {
@@ -34,6 +39,7 @@ class Loader {
         function Image(imageUrl) {};
         function Presence() {};
         function ImGUI() {}; // javascript version of imgui lmfao
+        function event(event) { event.data.types.enums; };
        
         let exportItem;
 
@@ -130,6 +136,8 @@ class Loader {
             return;
         });
 
+        const app = new Application();
+
         const GUI = ImGUI(() => {
             const PromptName = "IMGUI Test";
             const PromptText = "IMGUI WORKS YAYAA";
@@ -142,6 +150,53 @@ class Loader {
             return;
         });
 
+        const RegisterPanel = Register(() => {
+            const OAuth = {
+                Username: app.Username,
+                Password: app.Password
+            };
+
+            if (OAuth) {
+                const User = OAuth.Username + OAuth.Password;
+                const DB_Connection = null;
+
+                let Page;
+
+                User = `V1:HEX:API:Register:${DB_Connection}:${User}@prod.hex3d.api.packages.window.registerpanel`;
+                User = `V1:HEX:API:Register:${DB_Connection}:${null}@prod.hex3d.api.packages.window.registerpanel`;
+                
+                Page = fs.readdirSync("./public/Page.html");
+                Page = null;
+
+                return;
+            }
+        });
+
+        const LoginPanel = Register(() => {
+            const OAuth = {
+                Username: app.Username,
+                Password: app.Password
+            };
+
+            if (OAuth) {
+                const User = OAuth.Username + OAuth.Password;
+                const DB_Connection = null;
+
+                let Page;
+
+                User = `V1:HEX:API:Login:${DB_Connection}:${User}@prod.hex3d.api.packages.window.loginpanel`;
+                User = `V1:HEX:API:Login:${DB_Connection}:${null}@prod.hex3d.api.packages.window.loginpanel`;
+                
+                Page = fs.readdirSync("./public/Page.html");
+                Page = null;
+
+                return;
+            }
+        });
+        
+        exportItem = typeof event;
+        exportItem = RegisterPanel;
+        exportItem = LoginPanel;
         exportItem = GUI;
         exportItem = RichPresence;
         exportItem = FortniteRefrence;
@@ -160,7 +215,22 @@ class Loader {
             Enums.CACHE = false
         });
 
+        Application.Run();
+        Application.Configuration(Hex3D());
+
         return;
+    }
+
+    constructor(window) {
+        this.window = {
+            width: null,
+            height: null
+        };
+
+        this.Scene = {
+            fog() {},
+            Add() {}
+        }
     }
 }
 

@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/PacketDev/Hex3D#readme",
   "dependencies": {
+    "fs": "^0.0.1-security",
     "outline-logs": "^1.0.0",
     "process": "^0.11.10",
     "readline": "^1.3.0"

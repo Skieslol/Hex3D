@@ -8,6 +8,17 @@ class Application {
         }
         return Window;
     }
+    static async Run() {
+        return this.InitilizeEditor();
+    }
+    static async Configuration() {
+        return this.Run();
+    }
+
+    constructor() {
+        this.Username = {};
+        this.Password = {};
+    }
 }
 
 module.exports = Application;
