@@ -74,7 +74,7 @@ function InitilizeLighting() {
         intensity: 0.5,
         castShadow: true,
     });
-
+    scene.Add(light);
     scene.Add(globalLight);
     scene.Add(ambientLight);
     scene.Add(shadowLight);
